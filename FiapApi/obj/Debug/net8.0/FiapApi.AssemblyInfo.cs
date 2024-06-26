@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FiapApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fd3ba2d95b7786a3c9613a3a189ca46db3bff4e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af2bb21ab0cd2c2e984e37ebdd4fd89ca9a5581c")]
 [assembly: System.Reflection.AssemblyProductAttribute("FiapApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FiapApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

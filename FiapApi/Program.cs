@@ -8,8 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Configuração do Entity Framework e MySQL Server
-builder.Services.AddDbContext<AppDbContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<AppDbContext>(options => { options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")); });
 
 // Registra o serviço de teste da conexão com DB
 // builder.Services.AddTransient<DatabaseConnectionTester>();

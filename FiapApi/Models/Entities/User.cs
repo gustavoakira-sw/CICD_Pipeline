@@ -1,4 +1,5 @@
 namespace FiapApi.Models.Entities
+
 {
     public class User
     {
