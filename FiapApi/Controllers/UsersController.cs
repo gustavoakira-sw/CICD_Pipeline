@@ -46,7 +46,13 @@ public class UsersController : Controller
     public async Task<IActionResult> List()
     {
         var users = await appDbContext.User.ToListAsync();
+        
+        // Returns a view with all users:
         return View(users);
+        
+        // Returns a JSON with all users:
+        // return Json(users);
+
     }
     
     // GET Edit users
