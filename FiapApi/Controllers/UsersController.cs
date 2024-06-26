@@ -2,6 +2,7 @@ using FiapApi.Data;
 using FiapApi.Models;
 using FiapApi.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FiapApi.Controllers;
 
@@ -13,7 +14,7 @@ public class UsersController : Controller
     {
         this.appDbContext = appDbContext;
     }
-    // GET
+    // GET Add User page
     [HttpGet]
     public IActionResult Add()
     {
@@ -26,12 +27,11 @@ public class UsersController : Controller
     {
         var user = new User
         {
-            Id = 0,
-            Name = null,
-            Email = null,
-            Key = null,
-            Role = null,
-            Password = null
+            Name = viewModel.Name,
+            Email = viewModel.Email,
+            Key = viewModel.Key,
+            Role = viewModel.Role,
+            Password = viewModel.Password
         };
 
         await appDbContext.User.AddAsync(user);
@@ -39,5 +39,56 @@ public class UsersController : Controller
         await appDbContext.SaveChangesAsync();
         
         return View();
+    }
+    
+    // GET / List all
+    [HttpGet]
+    public async Task<IActionResult> List()
+    {
+        var users = await appDbContext.User.ToListAsync();
+        return View(users);
+    }
+    
+    // GET Edit users
+    [HttpGet]
+    public async Task<IActionResult> Edit(int id)
+    {
+        var foundUser = await appDbContext.User.FindAsync(id);
+
+        return View(foundUser);
+    }
+    
+    // POST Edit user
+    [HttpPost]
+    public async Task<IActionResult> Edit(User viewModel)
+    {
+        var foundUser = await appDbContext.User.FindAsync(viewModel.Id);
+
+        if (foundUser is not null)
+        {
+            foundUser.Name = viewModel.Name;
+            foundUser.Email = viewModel.Email;
+            foundUser.Key = viewModel.Key;
+            foundUser.Role = viewModel.Role;
+            foundUser.Password = viewModel.Password;
+
+            await appDbContext.SaveChangesAsync();
+        }
+
+        return RedirectToAction("List", "Users");
+    }
+    
+    // POST Delete user
+    public async Task<IActionResult> Delete(User viewModel)
+    {
+        var foundUser = await appDbContext.User.FindAsync(viewModel.Id);
+
+        if (foundUser is not null)
+        {
+            appDbContext.User.Remove(foundUser);
+            await appDbContext.SaveChangesAsync();
+        }
+
+        return RedirectToAction("List", "Users");
     }
 }

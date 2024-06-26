@@ -1,0 +1,41 @@
+@model List<FiapApi.Models.Entities.User>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>All Users</title>
+</head>
+<body>
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Key</th>
+            <th>Role</th>
+            <th>Password</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.Key</td>
+            <td>@item.Role</td>
+            <td>@item.Password</td>
+            <td>
+                <a class="btn btn-primary" asp-controller="Users" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+            </td>
+        </tr>
+        }
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

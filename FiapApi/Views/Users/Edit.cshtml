@@ -1,14 +1,25 @@
-@model FiapApi.Models.AddUserViewModel
+@model FiapApi.Models.Entities.User
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <title>Add User</title>
+    <title>Edit User</title>
 </head>
 <body>
 
+@if (Model is null)
+{
+<p>No user was found with this ID </p>
+}
+else
+{
 <form method="post">
+
+    <div class="mt-3">
+        <label class="form-label">ID</label>
+        <input type="text" class="form-control" name="Id" asp-for="Id" readonly required/>
+    </div>
     <div class="mt-3">
         <label class="form-label">Name</label>
         <input type="text" class="form-control" name="Name" asp-for="Name" required/>
@@ -31,7 +42,12 @@
     </div>
     <div class="mt-3">
         <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-danger ms-3"
+                asp-action="Delete"
+                asp-controller="Users">Delete</button>
     </div>
 </form>
+}
 </body>
+
 </html>

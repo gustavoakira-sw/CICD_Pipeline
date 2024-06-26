@@ -15,7 +15,6 @@ namespace FiapApi.Models.Entities
 // Warnings de nullable fields podem ser corrigidos com o código abaixo.
 // Incerto quanto as alterações na funcionalidade.
 
-// namespace FiapApi.Models.Entities
 // {
 //     public class User
 //     {
