@@ -42,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/akira/RiderProjects/FiapApi/FiapApi/Views/Users/Coletas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvQ29sZXRhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/akira/RiderProjects/FiapApi/FiapApi/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

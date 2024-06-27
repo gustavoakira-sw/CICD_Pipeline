@@ -1,0 +1,38 @@
+@model List<FiapApi.Models.Entities.ColetaDeLixo>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coletas (Todas)</title>
+</head>
+<body>
+<div class="container mt-3">
+    <h2>Ver todas as coletas</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Data e Hora</th>
+            <th>Endereço</th>
+            <th>Tipo de Lixo</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.DataHora.ToString("yyyy-MM-dd HH:mm:ss")</td>
+            <td>@item.Endereco</td>
+            <td>@item.TipoDeLixo</td>
+            @* <td> *@
+            @*     <a class="btn btn-primary" asp-controller="ColetaDeLixo" asp-action="Edit" asp-route-id="@item.Id">Editar</a> *@
+            @*     <a class="btn btn-danger" asp-controller="ColetaDeLixo" asp-action="Delete" asp-route-id="@item.Id">Deletar</a> *@
+            @* </td> *@
+        </tr>
+        }
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

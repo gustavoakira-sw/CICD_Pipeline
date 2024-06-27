@@ -9,15 +9,15 @@ public abstract class DatabaseConnectionTester(AppDbContext context, ILogger<Dat
     {
         try
         {
-            logger.LogInformation("Testing database connection...");
+            logger.LogInformation("Testando conexão com banco de dados...");
             await context.Database.OpenConnectionAsync();
             await context.Database.CloseConnectionAsync();
-            logger.LogInformation("Database connection successful.");
+            logger.LogInformation("Conexão concluída com sucesso.");
             return true;
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "Database connection failed.");
+            logger.LogError(ex, "Falha na conexão.");
             return false;
         }
     }

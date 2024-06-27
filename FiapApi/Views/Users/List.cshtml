@@ -4,7 +4,7 @@
 
 <html>
 <head>
-    <title>All Users</title>
+    <title>Usuários (Todos)</title>
 </head>
 <body>
 <div>
@@ -12,11 +12,11 @@
         <thead>
         <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Nome</th>
             <th>Email</th>
-            <th>Key</th>
-            <th>Role</th>
-            <th>Password</th>
+            <th>Chave</th>
+            <th>Nível</th>
+            <th>Senha</th>
         </tr>
         </thead>
         <tbody>
@@ -30,7 +30,7 @@
             <td>@item.Role</td>
             <td>@item.Password</td>
             <td>
-                <a class="btn btn-primary" asp-controller="Users" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a class="btn btn-primary" asp-controller="Users" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
             </td>
         </tr>
         }

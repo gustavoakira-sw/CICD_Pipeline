@@ -14,14 +14,14 @@ public class UsersController : Controller
     {
         this.appDbContext = appDbContext;
     }
-    // GET Add User page
+    // GET - Users/Add
     [HttpGet]
     public IActionResult Add()
     {
         return View();
     }
     
-    // POST
+    // POST - Users/Add
     [HttpPost]
     public async Task<IActionResult> Add(AddUserViewModel viewModel)
     {
@@ -41,7 +41,7 @@ public class UsersController : Controller
         return View();
     }
     
-    // GET / List all
+    // GET - Users/
     [HttpGet]
     public async Task<IActionResult> List()
     {
@@ -55,7 +55,7 @@ public class UsersController : Controller
 
     }
     
-    // GET Edit users
+    // GET - Users/{id}
     [HttpGet]
     public async Task<IActionResult> Edit(int id)
     {
@@ -64,7 +64,7 @@ public class UsersController : Controller
         return View(foundUser);
     }
     
-    // POST Edit user
+    // POST - Users/
     [HttpPost]
     public async Task<IActionResult> Edit(User viewModel)
     {
@@ -84,7 +84,7 @@ public class UsersController : Controller
         return RedirectToAction("List", "Users");
     }
     
-    // POST Delete user
+    // POST - Users/
     public async Task<IActionResult> Delete(User viewModel)
     {
         var foundUser = await appDbContext.User.FindAsync(viewModel.Id);
@@ -96,5 +96,15 @@ public class UsersController : Controller
         }
 
         return RedirectToAction("List", "Users");
+    }
+    
+    // GET Users/Coletas
+    // Permite visualização das coletas sem chave da API pois tem acesso direto ao banco de dados MySQL
+    // Rotas da API de coletas são protegidas conforme requisitos da atividade
+    [HttpGet("Coletas")]
+    public async Task<IActionResult> Coletas()
+    {
+        var coletas = await appDbContext.ColetaDeLixo.ToListAsync();
+        return View(coletas);
     }
 }
