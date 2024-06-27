@@ -101,7 +101,7 @@ public class UsersController : Controller
     // GET Users/Coletas
     // Permite visualização das coletas sem chave da API pois tem acesso direto ao banco de dados MySQL
     // Rotas da API de coletas são protegidas conforme requisitos da atividade
-    [HttpGet("Coletas")]
+    [HttpGet("Coletas/List")]
     public async Task<IActionResult> Coletas()
     {
         var coletas = await appDbContext.ColetaDeLixo.ToListAsync();
