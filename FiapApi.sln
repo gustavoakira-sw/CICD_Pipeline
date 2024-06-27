@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapApi", "FiapApi\FiapApi.csproj", "{90280ADF-9466-4CA6-B11D-EEA03EE3161C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapApi.Tests", "FiapApi.Tests\FiapApi.Tests.csproj", "{B7BA9EC1-1353-442E-944D-485F44A082E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{90280ADF-9466-4CA6-B11D-EEA03EE3161C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90280ADF-9466-4CA6-B11D-EEA03EE3161C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90280ADF-9466-4CA6-B11D-EEA03EE3161C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7BA9EC1-1353-442E-944D-485F44A082E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7BA9EC1-1353-442E-944D-485F44A082E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7BA9EC1-1353-442E-944D-485F44A082E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7BA9EC1-1353-442E-944D-485F44A082E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
