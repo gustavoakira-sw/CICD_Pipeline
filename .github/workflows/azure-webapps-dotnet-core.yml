@@ -54,7 +54,7 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Symlink OpenSSL
-        run: ln -s /usr/lib/libssl.so.47.0.6 /usr/lib/libssl.so.1.0.0
+        run: sudo ln -s /usr/lib/libssl.so.47.0.6 /usr/lib/libssl.so.1.0.0
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
