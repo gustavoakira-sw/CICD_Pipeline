@@ -54,7 +54,7 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Symlink OpenSSL
-        run: sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu5_amd64.deb
+        run: ln -s /usr/lib/libssl.so.47.0.6 /usr/lib/libssl.so.1.0.0
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
