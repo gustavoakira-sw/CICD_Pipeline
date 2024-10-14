@@ -52,7 +52,7 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@0565240e2d4ab88bba5387d719585280857ece09
         with:
-          context: ./FiapApi              # Specify the directory where the Dockerfile is located
+          context: .             # Specify the directory where the Dockerfile is located
           file: ./FiapApi/Dockerfile       # Explicitly set the path to the Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
